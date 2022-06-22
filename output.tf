@@ -8,4 +8,5 @@ output "app_id" {
 
 output "connection_string" {
   value = azurerm_application_insights.appserviceinsights.connection_string
+  sensitive   = true
 }

@@ -23,22 +23,8 @@ resource "azurerm_app_service" "appservice" {
   }
 
   app_settings = {
-    "MSDEPLOY_RENAME_LOCKED_FILES"                    = "1"
-    "WEBSITE_HEALTHCHECK_MAXPINGFAILURES"             = "10"
-    "ASPNETCORE_ENVIRONMENT"                          = "Development"
     "APPINSIGHTS_INSTRUMENTATIONKEY"                  = azurerm_application_insights.appserviceinsights.instrumentation_key
     "APPLICATIONINSIGHTS_CONNECTION_STRING"           = azurerm_application_insights.appserviceinsights.connection_string
-    "APPINSIGHTS_PROFILERFEATURE_VERSION"             = "1.0.0"
-    "APPINSIGHTS_SNAPSHOTFEATURE_VERSION"             = "1.0.0"
-    "ApplicationInsightsAgent_EXTENSION_VERSION"      = "~2"
-    "DiagnosticServices_EXTENSION_VERSION"            = "~3"
-    "InstrumentationEngine_EXTENSION_VERSION"         = "disabled"
-    "SnapshotDebugger_EXTENSION_VERSION"              = "disabled"
-    "XDT_MicrosoftApplicationInsights_BaseExtensions" = "disabled"
-    "XDT_MicrosoftApplicationInsights_Java"           = "1"
-    "XDT_MicrosoftApplicationInsights_Mode"           = "recommended"
-    "XDT_MicrosoftApplicationInsights_NodeJS"         = "1"
-    "XDT_MicrosoftApplicationInsights_PreemptSdk"     = "disabled"
   }
 
   connection_string {

@@ -8,8 +8,11 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
-  # Configuration options
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
 
 
@@ -19,10 +22,10 @@ resource "azurerm_resource_group" "appservice" {
 }
 
 resource "azurerm_log_analytics_workspace" "appserviceinsights" {
-  name                = "workspace-test"
+  name                = var.logaltycswsname
   location            = azurerm_resource_group.appservice.location
   resource_group_name = azurerm_resource_group.appservice.name
-  sku                 = "PerGB2018"
+  sku                 = var.logaltycswssku
   retention_in_days   = 30
 }
 
