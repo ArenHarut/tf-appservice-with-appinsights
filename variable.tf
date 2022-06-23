@@ -5,7 +5,7 @@ variable "location" {
 
 variable "rgname" {
   type    = string
-  default = "appservice-resources"
+  default = "appservicesolution"
 }
 
 variable "logaltycswsname" {
