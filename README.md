@@ -8,3 +8,4 @@ Creates 5 resources:
 3. App Service
 4. Log-Analytics Workspace
 5. Application Insights
+6. Azure SQL server with the DB
