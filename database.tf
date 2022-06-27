@@ -12,7 +12,7 @@ resource "azurerm_sql_server" "sqlserver" {
 }
 
 resource "azurerm_storage_account" "sqlserverstorage" {
-  name                     = "${var.az_sql_storage_name}${var.envname}"
+  name                     = "${var.az_sql_storage_name}-${var.envname}"
   resource_group_name      = azurerm_resource_group.appservicesolution.name
   location                 = azurerm_resource_group.appservicesolution.location
   account_tier             = var.az_sql_storage_tier
